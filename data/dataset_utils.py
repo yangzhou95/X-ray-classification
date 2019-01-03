@@ -162,7 +162,7 @@ def _convert_dataset(split_name, filenames, class_ids, dataset_file, tfrecord_fi
             sys.stdout.flush()
 
             # Read the filename:
-            image_data = tf.gfile.FastGFile(filenames[i], 'r').read()
+            image_data = tf.gfile.FastGFile(filenames[i], 'rb').read()
             height, width = image_reader.read_image_dims(sess, image_data)
 
             class_id = class_ids[i]
